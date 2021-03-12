@@ -2,6 +2,12 @@
 
 Retrieve logs from Cloud logging
 
+## Requirements
+
+- Python 3.6+
+
+## Setup
+
 1. Create configuration file
 
 ```
@@ -20,16 +26,36 @@ interval: 90
 maxWorkers: 4
 ```
 
-2. Run the script
+2. Google authentication
+
+a. Using environment variable
+
+- GCP Dashboard > IAM&Admin > Services Accounts > Create a service account with Logging Admin role
 
 ```
 $ export GOOGLE_APPLICATION_CREDENTIALS=<<PATH_TO_SERVICE_ACCOUNT_JSON_FILE>>
+```
+
+b. Using json file
+
+Save service account json file (keyfile.json) in executable script or binary
+
+c. Using gcloud
+
+```
+$ gcloud init
+$ gcloud auth application-default login
+```
+
+3. Run the script
+
+```
 $ pip install -r requirements.txt
 $ python main.py -h
 $ python main.py
 ```
 
-3. Execute as binary file in Mac OSX
+## Execute as binary file in Mac OSX
 
 ```
 $ curl -L https://github.com/bangnh1/gcp-logging-retrieved/releases/download/v0.0.1/gcp-logging-retrieved -o gcp-logging-retrieved

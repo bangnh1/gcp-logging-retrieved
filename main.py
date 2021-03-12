@@ -17,12 +17,6 @@ import json
 # Logging configuration
 logger = pythonLog.getLogger(__name__)
 
-# Instantiates a client
-if os.path.isfile('keyfile.json'):
-    logging_client = Client.from_service_account_json('keyfile.json')
-else:
-    logging_client = Client()
-
 
 class LogBlock:
     def __init__(self, start, end, field, queryStatement):
@@ -66,6 +60,12 @@ def normalize(data):
 
 
 def getEntries(task_queue):
+
+    # Instantiates a client
+    if os.path.isfile('keyfile.json'):
+        logging_client = Client.from_service_account_json('keyfile.json')
+    else:
+        logging_client = Client()
 
     getEntries = logging_client.list_entries(
         filter_=task_queue.queryStatement, page_size=1000)
@@ -132,7 +132,7 @@ def main():
     startTime = configurationData.get('startTime')
     endTime = configurationData.get('endTime')
     interval = configurationData.get('interval', 30)
-    maxWorkers = configurationData.get('maxWorkers', 4)
+    maxWorkers = configurationData.get('maxWorkers', os.cpu_count())
     field = configurationData.get('field', '')
     queryStatement = queryStatementTransform(configurationData.get(
         'queryStatement'))
