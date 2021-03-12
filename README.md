@@ -28,3 +28,11 @@ $ pip install -r requirements.txt
 $ python main.py -h
 $ python main.py
 ```
+
+3. Execute as binary file in Mac OSX
+
+```
+$ curl -L https://github.com/bangnh1/gcp-logging-retrieved/releases/download/v0.0.1/gcp-logging-retrieved -o gcp-logging-retrieved
+$ export GOOGLE_APPLICATION_CREDENTIALS=<<PATH_TO_SERVICE_ACCOUNT_JSON_FILE>>
+$ ./gcp-logging-retrieved -c config.yaml
+```
