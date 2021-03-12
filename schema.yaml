@@ -1,0 +1,32 @@
+{
+    'startTime': {
+        'required': True,
+        'type': 'string',
+        'regex': '\d{4}-[01]\d-[0-3]\dT[0-2]\d:[0-5]\d:[0-5]\d(?:\.\d+)?Z?'
+    },
+    'endTime': {
+        'required': True,
+        'type': 'string',
+        'regex': '\d{4}-[01]\d-[0-3]\dT[0-2]\d:[0-5]\d:[0-5]\d(?:\.\d+)?Z?'
+    },
+    'queryStatement': {
+        'required': True,
+        'type': 'string'
+    },
+    'field': {
+        'required': False,
+        'type': 'string'
+    },
+    'interval': {
+        'required': False,
+        'type': 'number',
+        'min': 1,
+        'default': 30
+    },
+    'maxWorkers': {
+        'required': False,
+        'type': 'number',
+        'min': 1,
+        'default': 4
+    }
+}
