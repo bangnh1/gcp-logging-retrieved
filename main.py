@@ -132,7 +132,7 @@ def main():
     startTime = configurationData.get('startTime')
     endTime = configurationData.get('endTime')
     interval = configurationData.get('interval', 30)
-    maxWorkers = configurationData.get('maxWorkers', 4)
+    maxWorkers = configurationData.get('maxWorkers', os.cpu_count())
     field = configurationData.get('field', '')
     queryStatement = queryStatementTransform(configurationData.get(
         'queryStatement'))

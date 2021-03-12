@@ -1,5 +1,7 @@
-autopep8==1.5.4
+altgraph==0.17
+autopep8==1.5.5
 cachetools==4.2.0
+Cerberus==1.3.2
 certifi==2020.12.5
 cffi==1.14.4
 chardet==4.0.0
@@ -17,7 +19,9 @@ grpcio==1.34.0
 gspread==3.6.0
 httplib2==0.18.1
 idna==2.10
+importlib-metadata==3.7.2
 libcst==0.3.16
+macholib==1.14
 mypy-extensions==0.4.3
 numpy==1.19.5
 oauthlib==3.1.0
@@ -29,6 +33,8 @@ pyasn1==0.4.8
 pyasn1-modules==0.2.8
 pycodestyle==2.6.0
 pycparser==2.20
+pyinstaller==4.2
+pyinstaller-hooks-contrib==2021.1
 python-dateutil==2.8.1
 pytz==2020.5
 PyYAML==5.3.1
@@ -41,3 +47,4 @@ typing-extensions==3.7.4.3
 typing-inspect==0.6.0
 uritemplate==3.0.1
 urllib3==1.26.2
+zipp==3.4.1
